@@ -27,7 +27,6 @@ def progress(path):
 
 def func():
     temp_str="{start_fio_result;"
-    print("{start_fio_result;"),
     rw_list=['read', 'write', 'randread', 'randwrite', 'randrw']
     bs_list=['4k', '16k', '64k', '256k']
     iodepth_list=['1','8','64']
