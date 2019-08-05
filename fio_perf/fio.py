@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 arg=str(rw)+"_"+str(bs)+"_"+str(iod)
                 dir=mydir(arg)
                 if dir:
-                    cmdbase='fio --rw=%s --bs=%s --iodepth=%s --runtime=1m --direct=1 --filename=/mnt/read_64k_8 --name=job1 --ioengine=libaio --thread --group_reporting --numjobs=16 --size=512MB --time_based --output=%s &> /dev/null'
+                    cmdbase='fio --rw=%s --bs=%s --iodepth=%s --runtime=1m --direct=1 --filename=/mnt/read_64k_8 --name=job1 --ioengine=libaio --thread --group_reporting --numjobs=16 --size=512MB --time_based --output=%s '
                     cmd=cmdbase%(rw,bs,iod,dir+"/result")
                     try:
                         print("now: "+arg)
