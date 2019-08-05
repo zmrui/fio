@@ -34,7 +34,7 @@ PACKAGE="newfio"
 rlJournalStart
 
     rlPhaseStartTest
-        yum install -y fio
+        yum install -y fio python
         rlRun "python fio.py" 0 "Run fio test"
         rlRun "python fioreport.py" 0 "Run fio test"
     rlPhaseEnd
