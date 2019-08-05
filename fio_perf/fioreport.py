@@ -37,6 +37,7 @@ def func():
                     path="/home/fioresult/"+arg
                     speed=progress(path)
                     temp_str=temp_str+arg+","+str(speed)+";"
+    temp_str=temp_str+"end_fio_result}"
     print(temp_str)
                     
                     
