@@ -8,6 +8,7 @@ def progress(path):
     except:
         return 0.0
     filecontent=fileobj.read()
+    print(filecontent)
     res=re.search('((BW=\d*\.\d*)|(BW=\d*))(M|K)(iB/s)',filecontent)
     (start,end)=res.span()
     result=filecontent[int(start)+3:int(end)]
