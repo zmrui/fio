@@ -26,6 +26,7 @@ def progress(path):
     
 
 def func():
+    temp_str="{start_fio_result;"
     print("{start_fio_result;"),
     rw_list=['read', 'write', 'randread', 'randwrite', 'randrw']
     bs_list=['4k', '16k', '64k', '256k']
@@ -36,8 +37,8 @@ def func():
                     arg=str(rw)+"_"+str(bs)+"_"+str(iod)
                     path="/home/fioresult/"+arg
                     speed=progress(path)
-                    print(arg+","+str(speed)+";"),
-    print("end_fio_result}")
+                    temp_str=temp_str+arg+","+str(speed)+";"
+    print(temp_str)
                     
                     
 if __name__ == "__main__":
