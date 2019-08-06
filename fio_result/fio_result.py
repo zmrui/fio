@@ -74,9 +74,10 @@ def compare(nvr_list,base,target):
         temp_item.append(compare_result_txt)
         result.append(temp_item)
     
-    with open(filepath,"w",newline="") as f:
-        writer=csv.writer(f)
-        writer.writerows(result)
+    f = open(filepath,"w")
+    writer=csv.writer(f)
+    writer.writerows(result)
+    f.close()
 
 def process():
     back_.mountNFS()
