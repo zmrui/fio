@@ -1,6 +1,6 @@
 import re
 import os
-
+import back_
 def progress(path):
     filepath=path+"/result"
     try:
@@ -43,3 +43,6 @@ def func():
                     
 if __name__ == "__main__":
     func()
+    back_.mountNFS()
+    back_.copy_to_NFS()
+    back_.unmountNFS()
