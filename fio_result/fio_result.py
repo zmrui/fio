@@ -56,7 +56,7 @@ def compare(nvr_list,base,target):
     temp_head.append(" ")
     temp_head.append(nvr_list[base])
     temp_head.append(nvr_list[target])
-    temp_head.append(nvr_list[target]+"->"+nvr_list[target])
+    temp_head.append(nvr_list[base]+"->"+nvr_list[target])
     result.append(temp_head)
     for test in test_list:
         base_path="/home/kg/"+back_.get_hostname()+"/"+nvr_list[base]+"/"
