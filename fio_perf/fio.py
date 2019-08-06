@@ -11,12 +11,12 @@ def mydir(name):
         return None
 
 if __name__ == "__main__":
-    rw_list=['read', 'write', 'randread', 'randwrite', 'randrw']
-    bs_list=['4k', '16k', '64k', '256k']
-    iodepth_list=['1','8','64']
-#    rw_list=['read']
-#    bs_list=['4k']
-#    iodepth_list=['1']
+#    rw_list=['read', 'write', 'randread', 'randwrite', 'randrw']
+#    bs_list=['4k', '16k', '64k', '256k']
+#    iodepth_list=['1','8','64']
+    rw_list=['read']
+    bs_list=['4k', '16k', '64k']
+    iodepth_list=['1']
     for rw in rw_list:
         for bs in bs_list:
             for iod in iodepth_list:
