@@ -157,6 +157,8 @@ def main():
         print("run test:"+CURRENT+";compare:"+BASELINE+"->"+TARGET)
         exit(0)
     elif (CURRENT == TARGET) and (CURRENT != BASELINE) and  (not exist(BASELINE)):
+        run_all_test()
+        back_.copy_to_NFS()
         back_.mountNFS()
         print("baseline result not exist")
         exit(2)
@@ -168,6 +170,8 @@ def main():
         print("run test:"+CURRENT+";compare:"+BASELINE+"->"+TARGET)
         exit(0)
     elif (CURRENT != TARGET) and (CURRENT == BASELINE) and (not  exist(TARGET)):
+        run_all_test()
+        back_.copy_to_NFS()
         #back_.unmountNFS()
         print("target result not exist")
         exit(3)
