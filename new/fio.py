@@ -131,7 +131,7 @@ def main():
     (BASELINE,TARGET)=get_enviroment()
     CURRENT=back_.get_nvr()
     back_.mountNFS()
-    print("in python, BASELINE="+BASELINE+",TARGENT="+TARGET)
+    print("in python, BASELINE="+BASELINE+",TARGENT="+TARGET+",current="+CURRENT)
 
     if TARGET==BASELINE:
         run_all_test()
