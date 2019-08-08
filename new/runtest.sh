@@ -48,11 +48,8 @@ done
 rlJournalStart
 
     rlPhaseStartTest
-        if ! [ -x "$(command -v fio)" ]; then
-            echo 'Error: fio is not installed.' >&2
-            yum install -y fio python python2
-        fi
-        
+        yum install -y fio python2
+
         rlRun "python2 fio.py" 0 "Run fio test"
         #rlRun "python fioreport.py" 0 "Run fio test"
     rlPhaseEnd
