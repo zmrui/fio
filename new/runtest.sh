@@ -32,8 +32,7 @@
 PACKAGE="sched_fio_benchmark"
 #export BASELINE=${BASELINE:-3.10.0-1062.el7}
 #export TARGET=${TARGET:-$(uname -r | sed 's/\.'$(uname -m)'//')}
-export TARGET=""
-export BASELINE=""
+
 while getopts "t:b:" opt;do
         case $opt in
            t) 
