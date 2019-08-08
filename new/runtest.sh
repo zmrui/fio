@@ -30,19 +30,8 @@
 . /usr/share/beakerlib/beakerlib.sh || exit 1
 
 PACKAGE="sched_fio_benchmark"
-#export BASELINE=${BASELINE:-3.10.0-1062.el7}
-#export TARGET=${TARGET:-$(uname -r | sed 's/\.'$(uname -m)'//')}
-
-while getopts "t:b:" opt;do
-        case $opt in
-           t) 
-                    export TARGET=$OPTARG;
-                    echo "target: $OPTARG";;
-	   b)
-                     export BASELINE=$OPTARG;
-                     echo "baseline: $OPTARG";;
-        esac
-done
+export BASELINE=${BASELINE:-3.10.0-1062.el7}
+export TARGET=${TARGET:-$(uname -r | sed 's/\.'$(uname -m)'//')}
 
 rlJournalStart
 
