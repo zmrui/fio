@@ -37,11 +37,11 @@ export BASELINE=""
 while getopts "t:b:" opt;do
         case $opt in
            t) 
-                    echo "target: $OPTARG";
-                    export TARGET=$OPTARG;;
-	        b)
-                     echo "baseline: $OPTARG";
-                     export BASELINE=$OPTARG;;
+                    export TARGET=$OPTARG;
+                    echo "target: $OPTARG";;
+	   b)
+                     export BASELINE=$OPTARG;
+                     echo "baseline: $OPTARG";;
         esac
 done
 
