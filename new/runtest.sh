@@ -32,14 +32,25 @@
 PACKAGE="sched_fio_benchmark"
 #export BASELINE=${BASELINE:-3.10.0-1062.el7}
 #export TARGET=${TARGET:-$(uname -r | sed 's/\.'$(uname -m)'//')}
-export BASELINE=$2
-export TARGET=$4
+export TARGET=""
+export BASELINE=""
+while getopts "t:b:" opt;do
+        case $opt in
+           t) 
+                    echo "target: $OPTARG";
+                    export TARGET=$OPTARG;;
+	        b)
+                     echo "baseline: $OPTARG";
+                     export BASELINE=$OPTARG;;
+        esac
+done
+
 rlJournalStart
 
     rlPhaseStartTest
         if ! [ -x "$(command -v fio)" ]; then
             echo 'Error: fio is not installed.' >&2
-            yum install -y fio python
+            yum install -y fio python python2
         fi
         
         rlRun "python2 fio.py" 0 "Run fio test"

@@ -4,15 +4,12 @@ Author: mizhang <mizhang@redhat.com>
 
 parameters:
 
-    -BASELINE   :kernel version, like  3.10.0-1062.el7
-           if not set, default 3.10.0-1062.el7
-    -TARGET     :kernel version, like  4.14.0-115.el7a
-           if not set, default current kernel version
+    -b  :baseline kernel version, like  3.10.0-1062.el7
+    -t  :target   kernel version, like  4.14.0-115.el7a
 
 example:
     compare 3.10.0-1062.el7 -> 4.14.0-115.el7a 
-        ./runtest.sh -BASELINE 3.10.0-1062.el7 -TARGET 4.14.0-115.el7a
-    runtest
-        ./runtest.sh -BASELINE <current_nvr> -TARGET <current_nvr>
+        ./runtest.sh -b 3.10.0-1062.el7 -t 4.14.0-115.el7a
 
-    
+    only runtest
+        ./runtest.sh 
