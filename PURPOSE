@@ -1,0 +1,50 @@
+PURPOSE of /kernel/general/scheduler/sched_fio_benchmark.
+Description: test desk performance fio
+Author: Mingrui Zhang <mizhang@redhat.com>
+
+To measure disk performance on a sigle machine, including
+read/write/rand_read/rand_write/rand_read_write bandwidth,
+we may use fio for such prepose.
+
+This test case may help run fio disk performance test,
+compare with previous result, and analyze result into
+a csv file by setting parameters.
+
+
+Parameters:
+    BASELINE  :baseline kernel version, like  3.10.0-1062.el7,
+               default current kernel
+    TARGET    :target   kernel version, like  4.18.0-80.el8  ,
+               default current kernel
+
+    BASELINE and TARGET parameters are default to be current kernel nvr
+
+If not given certain BASELINE and TARGET parameters, this script
+  will only run fio test under current system enviroment.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Explaination:
+      If only run test (most likely when current task is the
+      initial of all tasks sequence) not provide any parameters,
+      or set BASELINE and TARGET as same
+       For example:
+        Only run test. No set parameters
+        ./runtest.sh
+
+      If the purpose is run test and compare to previous result
+      then must give nvr as parameter for the object to compare,
+      no matter current task is baseline or target.
+       For example:
+        If current kernel version is 4.18.0-80.el8
+        and tests on 3.10.0-1062.el7 have just finished. Then
+        compare current test with previous result,
+        3.10.0-1062.el7 is baseline, 4.18.0-80.el8 is target.
+        Set BASELINE=3.10.0-1062.el7  , then it would like
+        BASELINE=3.10.0-1062.el7 ./runtest.sh
+
+        If current kernel version is 3.10.0-1062.el7
+        and tests on 4.18.0-80.el8 have just finished. Then
+        compare current test with previous result,
+        3.10.0-1062.el7 is baseline, 4.18.0-80.el8 is target.
+        Set TARGET=4.18.0-80.el8 , then it would like
+        TARGET=4.18.0-80.el8 ./runtest.sh
