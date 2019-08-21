@@ -23,7 +23,7 @@ def get_hostname():
 def mountNFS():
     if not os.path.exists("/home/kg"):
         os.makedirs("/home/kg")
-    cmd="mount -t nfs vmcore.usersys.redhat.com:/data/kgqe/scheduler/fio/ /home/kg/"
+    cmd="/"
     try:
         os.system(cmd)
         return "/home/kg/"
